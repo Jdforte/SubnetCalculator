@@ -1,10 +1,11 @@
 # this script will be for class B subnet mask for class A ip address range, so third octet evaluation is
-of interest here 
 #regex for submask will have 3 possible second octet variations per each 3 third octet evaluation 
 
 import re 
 
-def class AB(ipadd, submask):
+def class AB():
+    ipadd = input("Please enter your class A IP address: ")
+    submask = input("Please enter your submask: ")
     sec_one_a = "[0-1]{2}[.][0-9]{1}[.][0-9]{1}[.][0-9]{1,3}"
     sec_one_b = "[0-1]]{2}[.][0-9]{2}[.][0-9]{1}[.][0-9]{1,3}"
     sec_one_c = "[0-1]]{2}[.][0-9]{3}[.][0-9]{1}[.][0-9]{1,3}"
@@ -109,12 +110,5 @@ def class AB(ipadd, submask):
     print(submask)       
     print(ipadd + " belongs to a class A private address space ranging from " + cl + oct_2 + begin_octet + first_add + " to " + cl + oct_2 + end_octet + last_add + " with a Network address of " + cl + oct_2 + begin_octet + net_add + " and a broadcast address of " + cl + oct_2 + broad_octet + broad_add +".")
 
-classAB('10.2.3.4','255.255.128.0')
-classAB('10.234.4.16','255.255.192.0')
-classAB('10.55.12.188','255.255.224.0')
-classAB('10.0.245.34','255.255.240.0')
-classAB('10.240.78.1', '255.255.248.0')
-classAB('10.45.80.90', '255.255.252.0')
-#classAB('10.78.90.23', 'not a valid submask')
-classAB('not a valid ip', '255.255.224.0')
+classAB()
     
