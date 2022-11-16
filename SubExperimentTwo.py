@@ -3,8 +3,9 @@
 import re
 
 
-def classAA(ipadd, submask):
-
+def classAA():
+    ipadd = input("Please enter your class A IP address: ")
+    submask = input("Please enter your submask: ")
     sec_one = "[0-1]{2}[.][0-9]{1}[.][0-9]{1,3}[.][0-9]{1,3}"
     sec_two = "[0-1]{2}[.][0-9]{2}[.][0-9]{1,3}[.][0-9]{1,3}"
     sec_three = "[0-1]{2}[.][0-9]{3}[.][0-9]{1,3}[.][0-9]{1,3}"
@@ -73,11 +74,4 @@ def classAA(ipadd, submask):
     print(ipadd + " belongs to a class A private address space ranging from " + cl + begin_octet + first_add + " to " + cl + end_octet + last_add + " with a Network address of " + cl + begin_octet + net_add + " and a broadcast address of " + cl + broad_octet + broad_add +".")
 
 
-#classAA('10.2.3.4','255.128.0.0')
-#classAA('10.234.4.16','255.192.0.0')
-#classAA('10.55.12.188','255.224.0.0')
-#classAA('10.0.245.34','255.240.0.0')
-#classAA('10.240.78.1', '255.248.0.0')
-#classAA('10.45.80.90', '255.254.0.0')
-#classAA('10.78.90.23', 'not a valid submask')
-#classAA('not a valid ip', '255.240.0.0')
+classAA()
